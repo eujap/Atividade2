@@ -24,6 +24,7 @@ function validacao(){
         setTextButton("Sortear Novamente? ")
         setNum1(null)
         setNum2(null)
+        setErro(null)
         return
     }
     setNumeroSorteado(null)
