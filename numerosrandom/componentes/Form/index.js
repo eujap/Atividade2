@@ -30,27 +30,27 @@ function validacao(){
     }
     setNumeroSorteado(null)
     setTextButton("Sortear")
-    setMensagemNum("Preencha primeiro e uiltimo numero!")
+    setMensagemNum("Informe o primeiro e último número")
 }
 
 
     return(
         <View style={styles.fromContext}>
             <View style={styles.from}>
-                <Text style ={styles.formLAbel}>Primeiro numero:</Text>
+                <Text style ={styles.formLAbel}>Primeiro número:</Text>
                 <TextInput
                     style={styles.formInput}
                     onChangeText={setNum1}
                     value={num1}
-                    placeholder="Digite um numero inteiro"
+                    placeholder="Digite um número inteiro"
                     keyboardType="numeric"
                 />
-                <Text style ={styles.formLAbel}>Ultimo numero:</Text>
+                <Text style ={styles.formLAbel}>Último número:</Text>
                 <TextInput
                     style={styles.formInput}
                     onChangeText={setNum2}
                     value={num2}
-                    placeholder="Digite um numero inteiro"
+                    placeholder="Digite um número inteiro"
                     keyboardType="numeric"
                     />
                     <TouchableOpacity style= {styles.buttonSorteio}
