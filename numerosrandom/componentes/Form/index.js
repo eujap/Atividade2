@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import { View, Text, TextInput, Button } from "react-native";
+import { View, Text, TextInput, Button, TouchableOpacity } from "react-native";
+import styles from "../Form/style";
 
 
 
@@ -21,7 +22,7 @@ function validacao(){
         const novoNumeroSorteado = NumeroAleatorioIntervalo(parseInt(num1),parseInt(num2));  
         setNumeroSorteado(novoNumeroSorteado)           
         setMensagemNum("O Numero da Sorte é:")        
-        setTextButton("Sortear Novamente? ")
+        setTextButton("Sortear Novamente ? ")
         setNum1(null)
         setNum2(null)
         setErro(null)
@@ -34,35 +35,35 @@ function validacao(){
 
 
     return(
-        <View>
-            <View>
-                <Text>Primeiro numero</Text>
+        <View style={styles.fromContext}>
+            <View style={styles.from}>
+                <Text style ={styles.formLAbel}>Primeiro numero:</Text>
                 <TextInput
+                    style={styles.formInput}
                     onChangeText={setNum1}
                     value={num1}
                     placeholder="Digite um numero inteiro"
                     keyboardType="numeric"
                 />
-                <Text>Ultimo numero</Text>
+                <Text style ={styles.formLAbel}>Ultimo numero:</Text>
                 <TextInput
+                    style={styles.formInput}
                     onChangeText={setNum2}
                     value={num2}
                     placeholder="Digite um numero inteiro"
                     keyboardType="numeric"
                     />
-                    <Button onPress={() =>{
-                        if (num1 !== null && num2 !== null) {
-                            validacao();
-        } else {
-            setErro("Campos não preenchidos");
-        }
-                    } } 
-                    title={textButton} />
+                    <TouchableOpacity style= {styles.buttonSorteio}
+                    onPress={() =>{validacao()}}>
+                    <Text style= {styles.textButtonS}>{textButton}</Text>
+                    </TouchableOpacity>
+                    
+             
             </View>
-            <View>{numeroSorteado !== null ? (
-          <Text>{mensagemNum} {numeroSorteado}</Text>
+            <View style={styles.resultado}>{numeroSorteado !== null ? (
+          <Text style={styles.numeroSorteado}>{mensagemNum} {numeroSorteado}</Text>
         ) : (
-          <Text>{mensagemNum}</Text> )}</View>
+          <Text style={styles.textoInformacao}>{mensagemNum}</Text> )}</View>
           <View>
     <Text>{erro}</Text>
 </View>
